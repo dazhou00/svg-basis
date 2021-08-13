@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>滤镜</title>
+</head>
+
+<body>
+  <svg width=500 height=500>
+    <defs>
+      <filter id="spec-light" color-interpolate-filter="sRGB" x="0" y="0">
+        <feSpecularLighting in="SourceGraphic" lighting-color="#ffffcc" surfaceScale="1" specularConstant="1"
+          specularExponent="4" result="specOutput">
+          <feDistantLight elevation="25" azimuth="0" />
+        </feSpecularLighting>
+        <feComposite in1="specOutput" in2="SourceGraphic" operator="in" result="specOutput"></feComposite>
+        <feComposite in1="specOutput" in2="SourceGraphic" operator="arithmetic" k1="0" k2="1" k3="1" k4="0">
+        </feComposite>
+      </filter>
+    </defs>
+    <circle cx="50" cy="50" r="50" style="fill:#060;filter:url(#spec-light)"></circle>
+    <circle cx="170" cy="50" r="50" style="fill:#060"></circle>
+  </svg>
+</body>
+
+</html>

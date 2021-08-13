@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>marker</title>
+</head>
+
+<body>
+  <svg width=500 height=500>
+    <defs>
+      <marker id="marker" markerWidth="10" markerHeight="10" refX="0" refY="4" orient="auto">
+        <path d="M 0 0 4 4 0 8" style="fill:none;stroke:black;" />
+      </marker>
+    </defs>
+
+    <path d="M 10 20 100 20 A 20 30 0 0 1 120 50 L 120 110"
+      style="marker-start:url(#marker);marker-mid:url(#marker);marker-end:url(#marker);fill:none;stroke:black;" />
+  </svg>
+
+  <!-- 
+
+    path中使用marker-start,marker-mid,marker-end,marker属性来设置标记的位置。如果使用 marker 属性，则表示同时设置 marker-start,marker-mid,marker-end三个属性。
+
+除在path中以属性的形式设置标记外，还可以在css中设置：
+path {
+  marker:url(#marker_id);
+}
+
+但是此时要注意，如果id为marker_id的标记中也有path元素，则会出现自身无限引用自身的情况，因此需要说明marker中的path元素不需要添加标记：
+path {
+  marker: url(#marker_id);
+}
+
+marker#marker_id path { // marker 下的id为marker的元素下的path元素不需要marker标记
+  marker: none;
+}
+   -->
+</body>
+
+</html>

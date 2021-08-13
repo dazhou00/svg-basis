@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>裁剪路径</title>
+</head>
+
+<body>
+  <svg width=500 height=500>
+    <defs>
+      <clipPath id="rectClip">
+        <rect x="100" y="100" width="100" height="90" fill="none" stroke="black"></rect>
+        <circle cx="300" cy="150" r="60" fill="none"></circle>
+        <path d="M100 50L150,50L100,20L40,60Z" fill="none"></path>
+      </clipPath>
+    </defs>
+    <image x="0" y="0" width="480" height="270" xlink:href="./1.png" style="clip-path:url(#rectClip);"></image>
+    <image x="0" y="0" width="480" height="270" xlink:href="./1.png" opacity="0.2"></image>
+  </svg>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>滤镜</title>
+</head>
+
+<body>
+  <svg width=500 height=500>
+    <defs>
+      <filter id="diff-light" color-interpolate-filter="sRGB" x="0" y="0">
+        <feDiffuseLighting in="SourceGraphic" lighting-color="#ffffcc" surfaceScale="1" diffuseConstant="0.5"
+          result="diffuseOutput">
+          <fePointLight x="50" y="50" z="20" />
+        </feDiffuseLighting>
+        <feComposite in1="diffuseOutput" in2="SourceGraphic" operator="in" result="diffuseOutput"></feComposite>
+        <feBlend in1="diffuseOutput" in2="SourceGraphic" mode="screen"></feBlend>
+      </filter>
+    </defs>
+    <circle cx="50" cy="50" r="50" style="filter:url(#diff-light)"></circle>
+    <circle cx="170" cy="50" r="50"></circle>
+
+  </svg>
+</body>
+
+</html>

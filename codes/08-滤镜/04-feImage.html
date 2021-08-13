@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>滤镜</title>
+</head>
+
+<body>
+  <svg width=500 height=500>
+    <defs>
+      <filter id="image" x="0" y="0">
+        <feImage xlink:href="1.png" result="bg" x="10" y="10" width="200" height="200" preserveAspectRatio="none">
+        </feImage>
+      </filter>
+    </defs>
+    <g style="filter:url(#image)">
+      <rect x="10" y="10" width="200" height="300" stroke="black"></rect>
+    </g>
+    <g>
+      <rect x="10" y="10" width="200" height="300" fill="none" stroke="black"></rect>
+    </g>
+
+  </svg>
+</body>
+
+</html>

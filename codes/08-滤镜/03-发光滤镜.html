@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>滤镜</title>
+</head>
+
+<body>
+  <svg width=500 height=500>
+    <defs>
+      <filter id="matrix" x="0" y="0">
+        <feColorMatrix type="matrix" values="
+          0 0 0 0   0
+          0 0 0 0.9 0
+          0 0 0 0.9 0
+          0 0 0 1   0
+        "></feColorMatrix>
+      </filter>
+    </defs>
+    <text x="10" y="100" font-size="40" style="filter:url(#matrix)">发光滤镜</text>
+  </svg>
+</body>
+
+</html>
